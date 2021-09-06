@@ -1,0 +1,685 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: cornsilk;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.16rem;
+}
+#container {
+  position: relative;
+  width: 5.85rem;
+  height: 4.5rem;
+  border-radius: 0.1rem;
+  border: 0.04rem solid #000;
+}
+#container #switch {
+  position: absolute;
+  box-sizing: border-box;
+  width: 0.8rem;
+  height: 0.4rem;
+  border: 0.04rem solid;
+  border-radius: 0.3rem;
+  top: -0.5rem;
+  left: 50%;
+  margin-left: -8%;
+}
+#container #switch .switch-btn {
+  position: absolute;
+  width: 0.2rem;
+  height: 0.2rem;
+  border: 0.04rem solid;
+  border-radius: 50%;
+  top: 0.02rem;
+  left: 0.03rem;
+  transition: 0.5s;
+  box-shadow: inset 0.06rem -0.05rem 0rem 0rem #bef703;
+}
+#container #switch.switch-over .switch-btn {
+  left: 0.41rem;
+  box-shadow: inset 0.06rem -0.05rem 0rem 0rem #05d66e;
+}
+#container #switch::before {
+  position: absolute;
+  display: inline-block;
+  content: "Slow";
+  color: #abae16;
+  left: -0.65rem;
+  top: 0.07rem;
+}
+#container #switch::after {
+  position: absolute;
+  display: inline-block;
+  content: "Fast";
+  color: #05d66e;
+  left: 0.85rem;
+  top: 0.07rem;
+}
+#container .main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  /*******
+        风车样式
+        *******/
+}
+#container .main #sun {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  box-sizing: border-box;
+  top: 0.8rem;
+  right: 1.3rem;
+  width: 0.2rem;
+  height: 0.2rem;
+  border: 0.02rem solid;
+  border-radius: 50%;
+  animation: sun-rot 5s linear infinite;
+}
+@keyframes sun-rot {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+#container .main #sun span {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  width: 0.18rem;
+  height: 0.02rem;
+  border-radius: 0.2rem;
+  border: 0.01rem solid;
+  background: #000;
+  transform: rotate(calc(var(--i) * 45deg)) translate(-0.26rrem);
+  box-shadow: 0.04rem -0.05rem 0.01rem 0 #ffc800;
+  animation: suns-rot 1s linear infinite;
+  animation-delay: calc(var(--i) * -0.5s);
+}
+@keyframes suns-rot {
+  0% {
+    transform: rotate(calc(var(--i) * 45deg)) translate(-0.26rem) scaleX(1);
+  }
+  50% {
+    transform: rotate(calc(var(--i) * 45deg)) translate(-0.26rem) scaleX(0.6);
+  }
+  100% {
+    transform: rotate(calc(var(--i) * 45deg)) translate(-0.26rem) scaleX(1);
+  }
+}
+#container .main .mountain_group {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#container .main .mountain_group .mountain {
+  position: absolute;
+  box-sizing: border-box;
+  border: 0.04rem solid;
+  transform: rotate(45deg);
+}
+#container .main .mountain_group .mountain::before {
+  content: "";
+  display: block;
+  background: #000;
+  height: 0.04rem;
+  position: relative;
+  transform: rotate(90deg);
+}
+#container .main .mountain_group .mountain::after {
+  content: "";
+  position: relative;
+  height: 0.04rem;
+  display: block;
+  background: #000;
+}
+#container .main .mountain_group .mountain.a {
+  left: 1.05rem;
+  top: 3.85rem;
+  width: 0.2rem;
+  height: 0.2rem;
+}
+#container .main .mountain_group .mountain.a::before {
+  width: 0.8rem;
+  left: -0.42rem;
+  top: 0.52rem;
+}
+#container .main .mountain_group .mountain.a::after {
+  left: 0.16rem;
+  top: -0.08rem;
+  width: 0.2rem;
+  box-shadow: -0.1rem -0.07rem 0.01rem 0 #05d66e;
+}
+#container .main .mountain_group .mountain.b {
+  left: 1.7rem;
+  top: 3.7rem;
+  width: 0.25rem;
+  height: 0.25rem;
+}
+#container .main .mountain_group .mountain.b::before {
+  width: 0.55rem;
+  bottom: -0.46rem;
+  left: -0.29rem;
+}
+#container .main .mountain_group .mountain.b::after {
+  width: 0.25rem;
+  bottom: 0.08rem;
+  left: 0.21rem;
+  box-shadow: -0.13rem -0.07rem 0.01rem 0 #05d66e;
+}
+#container .main .mountain_group .mountain.c {
+  left: 2.78rem;
+  top: 3.26rem;
+  width: 0.3rem;
+  height: 0.3rem;
+}
+#container .main .mountain_group .mountain.c::before {
+  width: 1.05rem;
+  bottom: -0.75rem;
+  left: -0.54rem;
+}
+#container .main .mountain_group .mountain.c::after {
+  width: 0.55rem;
+  bottom: 0.08rem;
+  left: 0.25rem;
+  box-shadow: -0.22rem -0.07rem 0.01rem 0 #05d66e;
+}
+#container .main .mountain_group .mountain.d {
+  left: 3.41rem;
+  top: 3.73rem;
+  width: 0.83rem;
+  height: 0.3rem;
+  border: none;
+  border-left: 0.04rem solid;
+}
+#container .main .mountain_group .mountain.d::after {
+  width: 0.83rem;
+  bottom: 0.04rem;
+  left: -0.04rem;
+  box-shadow: 0.2rem 0.08rem 0.01rem 0 #05d66e;
+}
+#container .main .mountain_group .mountain.d::before {
+  display: none;
+}
+#container .main .mountain_group .mountain.e {
+  left: 4.36rem;
+  top: 3.54rem;
+  width: 0.2rem;
+  height: 0.2rem;
+}
+#container .main .mountain_group .mountain.e::before {
+  width: 0.5rem;
+  bottom: -0.26rem;
+  left: -0.27rem;
+}
+#container .main .mountain_group .mountain.e::after {
+  width: 1.22rem;
+  bottom: 0.08rem;
+  left: 0.16rem;
+  box-shadow: 0.1rem 0.08rem 0.01rem 0 #05d66e;
+}
+#container .main .cloud_wind_group {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: wind-rot 12s linear infinite;
+  animation-delay: calc(var(--i) * -6s);
+  /*******
+                白云样式
+                *******/
+  /*******
+                风样式
+                *******/
+}
+#container .main .cloud_wind_group .cloud {
+  width: 0.8rem;
+  height: 0.65rem;
+  position: absolute;
+  left: 0.6rem;
+  top: 0.2rem;
+}
+#container .main .cloud_wind_group .cloud span {
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+}
+#container .main .cloud_wind_group .cloud span:nth-child(1) {
+  width: 0.15rem;
+  height: 0.15rem;
+  top: 0.4rem;
+  border-radius: 50%;
+  border: 0.04rem solid transparent;
+  border-right-color: #000;
+  border-bottom-color: #000;
+  transform: rotate(135deg);
+}
+#container .main .cloud_wind_group .cloud span:nth-child(2) {
+  width: 0.1rem;
+  height: 0.1rem;
+  border: 0.04rem solid transparent;
+  z-index: 5;
+  left: 0.1rem;
+  bottom: 0.16rem;
+  border-right-color: #000;
+  border-bottom-color: #000;
+  transform: rotate(190deg);
+}
+#container .main .cloud_wind_group .cloud span:nth-child(3) {
+  width: 0.25rem;
+  height: 0.25rem;
+  border: 0.04rem solid transparent;
+  left: 0.22rem;
+  bottom: 0.16rem;
+  border-right-color: #000;
+  border-bottom-color: #000;
+  transform: rotate(220deg);
+  box-shadow: -0.03rem 0.05rem 0.02rem 0 #05a8e9;
+}
+#container .main .cloud_wind_group .cloud span:nth-child(4) {
+  width: 0.25rem;
+  height: 0.25rem;
+  border: 0.04rem solid transparent;
+  left: 0.39rem;
+  bottom: 0rem;
+  border-right-color: #000;
+  border-bottom-color: #000;
+  transform: rotate(302deg);
+  box-shadow: 0.04rem 0.02rem 0.02rem 0 #05a8e9;
+}
+#container .main .cloud_wind_group .cloud span:nth-child(5) {
+  width: 0.4rem;
+  height: 0.25rem;
+  border: 0.04rem solid transparent;
+  border-radius: 0rem;
+  left: 0.11rem;
+  bottom: 0rem;
+  border-bottom-color: #000;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+#container .main .cloud_wind_group .cloud:nth-child(2) {
+  left: 4.35rem;
+  top: 1.15rem;
+}
+#container .main .cloud_wind_group .cloud:nth-child(3) {
+  transform: rotate3d(0, 1, 0, 180deg);
+  left: 2rem;
+  top: 1.85rem;
+}
+#container .main .cloud_wind_group .cloud:nth-child(3) span {
+  box-shadow: none;
+}
+#container .main .cloud_wind_group .cloud:nth-child(3) span:nth-child(1) {
+  box-shadow: 0.02rem 0.03rem 0.02rem 0 #05a8e9;
+}
+#container .main .cloud_wind_group .cloud:nth-child(3) span:nth-child(2) {
+  box-shadow: 0.03rem 0.03rem 0.02rem 0 #05a8e9;
+}
+#container .main .cloud_wind_group .cloud:nth-child(3) span:nth-child(3) {
+  box-shadow: 0.05rem -0.02rem 0.02rem 0 #05a8e9;
+}
+#container .main .cloud_wind_group .wind {
+  width: 1rem;
+  height: 0.5rem;
+  position: absolute;
+}
+#container .main .cloud_wind_group .wind span {
+  position: absolute;
+  height: 0.04rem;
+  background: #000;
+  box-shadow: 0.07rem 0.07rem 0.02rem -0.01rem #05a8e9;
+}
+#container .main .cloud_wind_group .wind span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -0.06rem;
+  top: -0.15rem;
+  border: 0.04rem solid transparent;
+  border-left-color: #000;
+  border-top-color: #000;
+  transform: rotate(-45deg);
+  width: 0.1rem;
+  height: 0.1rem;
+  border-radius: 50%;
+}
+#container .main .cloud_wind_group .wind span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0.6rem;
+  height: 0.04rem;
+  background: #000;
+  right: 0rem;
+  box-shadow: 0.07rem 0.07rem 0.02rem -0.01rem #05a8e9;
+}
+#container .main .cloud_wind_group .wind span:nth-child(1) {
+  left: -0.3rem;
+  top: 0.25rem;
+  width: 0.7rem;
+}
+#container .main .cloud_wind_group .wind span:nth-child(1)::before {
+  left: -0.06rem;
+  top: -0.15rem;
+  border: 0.04rem solid transparent;
+  border-left-color: #000;
+  border-top-color: #000;
+  transform: rotate(-45deg);
+  width: 0.1rem;
+  height: 0.1rem;
+  border-radius: 50%;
+}
+#container .main .cloud_wind_group .wind span:nth-child(1)::after {
+  width: 0.65rem;
+  height: 0.04rem;
+  right: -0.8rem;
+}
+#container .main .cloud_wind_group .wind span:nth-child(2) {
+  left: 0.01rem;
+  top: 0.14rem;
+  width: 0.6rem;
+}
+#container .main .cloud_wind_group .wind span:nth-child(2)::before {
+  left: -0.06rem;
+  top: -0.15rem;
+  border: 0.04rem solid transparent;
+  border-left-color: #000;
+  border-top-color: #000;
+  transform: rotate(-45deg);
+  width: 0.1rem;
+  height: 0.1rem;
+  border-radius: 50%;
+}
+#container .main .cloud_wind_group .wind span:nth-child(2)::after {
+  width: 0.3rem;
+  height: 0.04rem;
+  right: -0.4rem;
+}
+#container .main .cloud_wind_group .wind span:nth-child(3) {
+  left: 0.75rem;
+  top: 0.36rem;
+  width: 0.15rem;
+}
+#container .main .cloud_wind_group .wind span:nth-child(3)::before {
+  border: none;
+  border-radius: 0;
+  transform: none;
+  background: #000;
+  left: -0.7rem;
+  top: 0;
+  width: 0.55rem;
+  height: 0.04rem;
+  box-shadow: 0.07rem 0.07rem 0.02rem -0.01rem #05a8e9;
+}
+#container .main .cloud_wind_group .wind span:nth-child(3)::after {
+  width: 0.4rem;
+  height: 0.04rem;
+  right: -0.55rem;
+}
+#container .main .cloud_wind_group .wind span:nth-child(4) {
+  left: 0.43rem;
+  top: 0.48rem;
+  width: 0.7rem;
+}
+#container .main .cloud_wind_group .wind span:nth-child(4)::before {
+  border: none;
+  border-radius: 0;
+  transform: none;
+  background: #000;
+  left: -0.25rem;
+  top: 0;
+  width: 0.2rem;
+  height: 0.04rem;
+}
+#container .main .cloud_wind_group .wind span:nth-child(4)::after {
+  width: 0.2rem;
+  height: 0.04rem;
+  right: -0.3rem;
+}
+#container .main .cloud_wind_group .wind.a {
+  left: 0.7rem;
+  top: 1.15rem;
+}
+#container .main .cloud_wind_group .wind.b {
+  left: 3.6rem;
+  top: 2.2rem;
+}
+#container .main .cloud_wind_group .small_wind {
+  position: absolute;
+}
+#container .main .cloud_wind_group .small_wind span {
+  height: 0.04rem;
+  background: #000;
+  box-shadow: 0.05rem 0.07rem 0.02rem -0.01rem #05a8e9;
+  border-radius: 35%;
+  position: absolute;
+}
+#container .main .cloud_wind_group .small_wind span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0.04rem;
+  background-color: #000;
+  box-shadow: 0.05rem 0.07rem 0.02rem -0.01rem #05a8e9;
+  border-radius: 35%;
+}
+#container .main .cloud_wind_group .small_wind span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0.04rem;
+  background-color: #000;
+  box-shadow: 0.05rem 0.07rem 0.02rem -0.01rem #05a8e9;
+  border-radius: 35%;
+}
+#container .main .cloud_wind_group .small_wind span:nth-child(1) {
+  width: 0.35rem;
+  left: 1.5rem;
+  top: 0.5rem;
+}
+#container .main .cloud_wind_group .small_wind span:nth-child(2) {
+  width: 0.15rem;
+  left: 2.65rem;
+  top: 0.9rem;
+}
+#container .main .cloud_wind_group .small_wind span:nth-child(2)::before {
+  width: 0.2rem;
+  left: -0.2rem;
+  top: 0.25rem;
+}
+#container .main .cloud_wind_group .small_wind span:nth-child(2)::after {
+  width: 0.08rem;
+  left: 0.2rem;
+}
+#container .main .cloud_wind_group .small_wind span:nth-child(3) {
+  width: 0.12rem;
+  left: 5.35rem;
+  top: 0.7rem;
+}
+#container .main .cloud_wind_group .small_wind span:nth-child(3)::before {
+  width: 0.3rem;
+  left: -0.4rem;
+}
+#container .main .cloud_wind_group .small_wind span:nth-child(4) {
+  width: 0.3rem;
+  left: 0.65rem;
+  top: 2.3rem;
+}
+#container .main .cloud_wind_group .small_wind span:nth-child(4)::before {
+  width: 0.13rem;
+  left: -0.35rem;
+  top: 0.25rem;
+}
+#container .main .cloud_wind_group .small_wind span:nth-child(4)::after {
+  width: 0.1rem;
+  left: 0.45rem;
+}
+#container .main .cloud_wind_group .small_wind span:nth-child(5) {
+  width: 0.35rem;
+  left: 1.45rem;
+  top: 2.95rem;
+}
+#container .main .cloud_wind_group .small_wind span:nth-child(6) {
+  width: 0.15rem;
+  left: 5.3rem;
+  top: 2.9rem;
+}
+#container .main .cloud_wind_group.cloudUp {
+  animation-duration: 6s;
+  animation-delay: calc(var(--i) * -3s);
+}
+@keyframes wind-rot {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+#container .main .windmill_group {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+#container .main .windmill_group .windmill {
+  position: absolute;
+  width: 0.15rem;
+  height: 1.6rem;
+  left: 1.57rem;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#container .main .windmill_group .windmill .mill_body {
+  position: absolute;
+  width: 0.1rem;
+  height: 1.6rem;
+  bottom: 0;
+  perspective: 1.2rem;
+}
+#container .main .windmill_group .windmill .mill_body::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: cornsilk;
+  border: 0.04rem solid #000;
+  border-width: 0 0.04rem;
+  transform-origin: bottom;
+  transform: rotateX(15deg);
+}
+#container .main .windmill_group .windmill .mill_head {
+  position: absolute;
+  width: 0.17rem;
+  height: 0.17rem;
+  top: 0.17rem;
+  left: 0.01rem;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: mill-rot 3s linear infinite;
+}
+#container .main .windmill_group .windmill .mill_head .fan {
+  position: absolute;
+  width: 1rem;
+  height: 0.1rem;
+  border: 0.04rem solid;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: cornsilk;
+  transform: rotateZ(calc(var(--i) * 120deg)) translateX(0.45rem);
+}
+#container .main .windmill_group .windmill .mill_head::after {
+  position: absolute;
+  content: "";
+  width: 0.15rem;
+  height: 0.15rem;
+  border-radius: 50%;
+  background: cornsilk;
+  border: 0.04rem solid;
+}
+#container .main .windmill_group .windmill .mill_head.upSpead {
+  animation-duration: 1s;
+}
+@keyframes mill-rot {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+#container .main .windmill_group .windmill:nth-child(2) {
+  left: 0.5rem;
+  transform: scale(0.5);
+  transform-origin: bottom;
+}
+#container .main .windmill_group .windmill:nth-child(3) {
+  left: 4rem;
+  transform: scale(0.7);
+  transform-origin: bottom;
+}
+#container .main .grove_group {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#container .main .grove_group .grove {
+  width: 0.3rem;
+  height: 0.15rem;
+  border: 0.04rem solid;
+  border-radius: 50%;
+  transform: rotateZ(75deg);
+  position: absolute;
+  bottom: 0.2rem;
+  left: 0.79rem;
+  background: cornsilk;
+  box-shadow: inset 0.03rem 0.02rem 0.03rem 0 #9cca07;
+}
+#container .main .grove_group .grove::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0.3rem;
+  height: 0.06rem;
+  border: 0.04rem solid transparent;
+  transform: rotateZ(-7deg);
+  border-top-color: #9cca07;
+  border-radius: 50%;
+  top: -0.1rem;
+  left: -0.07rem;
+}
+#container .main .grove_group .grove::after {
+  content: "";
+  display: block;
+  width: 0.2rem;
+  height: 0.02rem;
+  background: #000;
+  position: absolute;
+  left: 0.3rem;
+  bottom: 0.03rem;
+  transform: rotateZ(12deg);
+}
+#container .main .grove_group .grove:nth-child(2) {
+  left: 2.4rem;
+}
+#container .main .grove_group .grove:nth-child(3) {
+  left: 2.8rem;
+}
+#container .main .grove_group .grove:nth-child(4) {
+  left: 4.9rem;
+}
